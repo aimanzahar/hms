@@ -15,6 +15,40 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    @if(Auth::user()?->isDoctor())
+                        <x-nav-link :href="route('doctor.patients.index')" :active="request()->routeIs('doctor.patients.*')">
+                            {{ __('Patients') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('doctor.appointments.index')" :active="request()->routeIs('doctor.appointments.*')">
+                            {{ __('Appointments') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('doctor.medical-records.index')" :active="request()->routeIs('doctor.medical-records.*')">
+                            {{ __('Medical Records') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('doctor.bills.index')" :active="request()->routeIs('doctor.bills.*')">
+                            {{ __('Bills') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('doctor.profile')" :active="request()->routeIs('doctor.profile')">
+                            {{ __('Profile') }}
+                        </x-nav-link>
+                    @elseif(Auth::user()?->isPatient())
+                        <x-nav-link :href="route('patient.doctors.index')" :active="request()->routeIs('patient.doctors.*')">
+                            {{ __('Find Doctors') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('patient.appointments.index')" :active="request()->routeIs('patient.appointments.*')">
+                            {{ __('My Appointments') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('patient.medical-records.index')" :active="request()->routeIs('patient.medical-records.*')">
+                            {{ __('Medical Records') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('patient.bills.index')" :active="request()->routeIs('patient.bills.*')">
+                            {{ __('Bills') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('patient.profile')" :active="request()->routeIs('patient.profile')">
+                            {{ __('Profile') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -70,6 +104,40 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
+            @if(Auth::user()?->isDoctor())
+                <x-responsive-nav-link :href="route('doctor.patients.index')" :active="request()->routeIs('doctor.patients.*')">
+                    {{ __('Patients') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('doctor.appointments.index')" :active="request()->routeIs('doctor.appointments.*')">
+                    {{ __('Appointments') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('doctor.medical-records.index')" :active="request()->routeIs('doctor.medical-records.*')">
+                    {{ __('Medical Records') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('doctor.bills.index')" :active="request()->routeIs('doctor.bills.*')">
+                    {{ __('Bills') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('doctor.profile')" :active="request()->routeIs('doctor.profile')">
+                    {{ __('Profile') }}
+                </x-responsive-nav-link>
+            @elseif(Auth::user()?->isPatient())
+                <x-responsive-nav-link :href="route('patient.doctors.index')" :active="request()->routeIs('patient.doctors.*')">
+                    {{ __('Find Doctors') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('patient.appointments.index')" :active="request()->routeIs('patient.appointments.*')">
+                    {{ __('My Appointments') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('patient.medical-records.index')" :active="request()->routeIs('patient.medical-records.*')">
+                    {{ __('Medical Records') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('patient.bills.index')" :active="request()->routeIs('patient.bills.*')">
+                    {{ __('Bills') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('patient.profile')" :active="request()->routeIs('patient.profile')">
+                    {{ __('Profile') }}
+                </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->
