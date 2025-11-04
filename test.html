@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS - System Check</title>
+    <style>
+        body {
+            font-family: monospace;
+            background: #1a1a1a;
+            color: #00ff00;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .success { color: #00ff00; }
+        .error { color: #ff0000; }
+        .info { color: #00aaff; }
+        h1 { color: #ffff00; }
+        .box {
+            background: #2a2a2a;
+            border: 1px solid #00ff00;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        a {
+            color: #00aaff;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: #2a2a2a;
+            border: 1px solid #00aaff;
+            display: inline-block;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        a:hover {
+            background: #00aaff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>🏥 HMS System Check</h1>
+    
+    <div class="box">
+        <h2 class="info">System Status</h2>
+        <p class="success">✓ HTML files are loading correctly</p>
+        <p class="info">ℹ If you see this page, Apache is serving files from /hms/ directory</p>
+    </div>
+    
+    <div class="box">
+        <h2 class="info">PHP Status</h2>
+        <p>Click the link below to check if PHP is working:</p>
+        <a href="/hms/phpinfo.php" target="_blank">Test PHP (phpinfo.php)</a>
+    </div>
+    
+    <div class="box">
+        <h2 class="info">Quick Access Links</h2>
+        <div>
+            <a href="/hms/start.html">🎯 Start Page</a>
+            <a href="/hms/login.php">🔐 Login</a>
+            <a href="/hms/seed.php">🔧 Initialize Database</a>
+            <a href="/hms/register.php">📝 Register</a>
+        </div>
+    </div>
+    
+    <div class="box">
+        <h2 class="info">Troubleshooting</h2>
+        <p>If links above don't work:</p>
+        <ol>
+            <li>Check Apache is running in Docker</li>
+            <li>Verify PHP module is enabled in Apache</li>
+            <li>Check file permissions (should be 755 for files)</li>
+            <li>Ensure /hms/ directory exists in document root</li>
+        </ol>
+    </div>
+    
+    <div class="box">
+        <h2 class="info">File Paths</h2>
+        <p>Document Root: /volume1/docker/apache/data/public/</p>
+        <p>HMS Location: /volume1/docker/apache/data/public/hms/</p>
+        <p>Access via: http://192.168.100.80:40580/hms/</p>
+        <p>Or via: https://test.zahar.my/hms/</p>
+    </div>
+    
+    <div class="box">
+        <p class="success">Current URL: <span id="url"></span></p>
+        <script>
+            document.getElementById('url').textContent = window.location.href;
+        </script>
+    </div>
+</body>
+</html>

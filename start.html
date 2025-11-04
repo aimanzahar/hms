@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS - Quick Access</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #2563eb;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            margin: 1rem 0;
+            background: #2563eb;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+        }
+        .btn-secondary {
+            background: #10b981;
+        }
+        .btn-secondary:hover {
+            background: #059669;
+        }
+        .btn-info {
+            background: #f59e0b;
+        }
+        .btn-info:hover {
+            background: #d97706;
+        }
+        .credentials {
+            background: #f3f4f6;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            font-size: 0.875rem;
+        }
+        .credentials h3 {
+            margin-top: 0;
+            color: #1f2937;
+        }
+        .cred-item {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 4px;
+        }
+        .cred-label {
+            font-weight: 600;
+            color: #374151;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 Healthcare Management System</h1>
+        <p class="subtitle">Quick Access Portal</p>
+        
+        <a href="/hms/seed.php" class="btn btn-info">
+            🔧 Step 1: Initialize Database (Run First!)
+        </a>
+        
+        <a href="/hms/login.php" class="btn">
+            🔐 Login Page
+        </a>
+        
+        <a href="/hms/register.php" class="btn btn-secondary">
+            📝 Patient Registration
+        </a>
+        
+        <div class="credentials">
+            <h3>📋 Demo Accounts</h3>
+            
+            <div class="cred-item">
+                <div class="cred-label">👨‍⚕️ Doctor Account:</div>
+                <div>Email: <code>dr.ahmad@hms.my</code></div>
+                <div>Password: <code>password</code></div>
+            </div>
+            
+            <div class="cred-item">
+                <div class="cred-label">🏥 Patient Account:</div>
+                <div>Email: <code>sarah.tan@email.my</code></div>
+                <div>Password: <code>password</code></div>
+            </div>
+            
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 2px solid #e5e7eb;">
+                <strong>⚠️ Important:</strong> Click "Initialize Database" button first if this is your first time accessing the system.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
