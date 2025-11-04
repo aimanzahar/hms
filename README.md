@@ -577,5 +577,3 @@ For issues, questions, or suggestions:
 **Version**: 1.0.0  
 **Last Updated**: November 4, 2025  
 **Status**: Active Development
-
-Made with ❤️ for Malaysian Healthcare
